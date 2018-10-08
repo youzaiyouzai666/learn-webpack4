@@ -1,7 +1,15 @@
+const path = require('path');
 module.exports = {
-    optimization: {
-      splitChunks: {
-        chunks: "all"
-      }
+    mode:'development',
+    module:{
+        rules: [{
+            test: /\.js$/,
+            use: {
+              loader: path.resolve(__dirname, './loaders/demo1.js'),
+              options: {
+                name: 'youzaiyouzai666'
+              }
+            }
+          }]
     }
-  }
+}
